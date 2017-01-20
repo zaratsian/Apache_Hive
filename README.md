@@ -1,5 +1,5 @@
 <h3>Apache Hive</h3>
-<br><img src="images/Apache_Hive_logo.png" class="inline"/>&ensp;&ensp;<b>Tuning Tips and Tricks</b>
+<br><img src="images/Apache_Hive_logo.png" class="inline"/>&ensp;&ensp;<b>Hive Syntax & Projects</b>
 
 
 
