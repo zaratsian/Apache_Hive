@@ -6,4 +6,4 @@
 <br>
 <br>
 <br><b>References:</b>
-<br><a href="http://hortonworks.com/blog/hive-cheat-sheet-for-sql-users/">Hortonworks hive Cheatsheet</a>
+<br><a href="http://hortonworks.com/wp-content/uploads/2016/05/Hortonworks.CheatSheet.SQLtoHive.pdf">Hortonworks hive Cheatsheet</a>
