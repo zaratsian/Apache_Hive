@@ -2,6 +2,7 @@
 
 <br>Beeline:
 <br>```beeline -u jdbc:hive2://localhost:10000/default -n username -w password_file```
+<br>```!connect jdbc:hive2://localhost:10015```
 <br><a href="https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients">HiveServer2 Clients - Beeline</a>
 <br>
 <br>
