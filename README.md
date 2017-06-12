@@ -1,4 +1,4 @@
-<br><img src="images/Apache_Hive_logo.png" class="inline"/>&ensp;&ensp;<b>Hive Syntax & Projects</b>
+<img src="images/Apache_Hive_logo.png" class="inline"/>&ensp;&ensp;<b>Hive Syntax & Projects</b>
 <br>
 <br><b>Commands:</b>
 <br>
