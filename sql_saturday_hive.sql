@@ -14,7 +14,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS mm_season_temp
     LINES TERMINATED BY "\n"
     STORED AS TEXTFILE
     LOCATION "/tmp/marchmadness/SeasonResults"
-    TBLPROPERTIES ("skip.header.line.count=1");
+    TBLPROPERTIES ("skip.header.line.count"="1");
 
 CREATE TABLE IF NOT EXISTS mm_season
     (id string, season string, day string, wteam string, wscore int, lteam string, lscore int, wloc string, ot string)
@@ -40,7 +40,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS mm_teams_temp
     LINES TERMINATED BY "\n"
     STORED AS TEXTFILE
     LOCATION "/tmp/marchmadness/Teams"
-    TBLPROPERTIES ("skip.header.line.count=1");
+    TBLPROPERTIES ("skip.header.line.count"="1");
 
 CREATE TABLE IF NOT EXISTS mm_teams
     (team_id string, team_name string)
