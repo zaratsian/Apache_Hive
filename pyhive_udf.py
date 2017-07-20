@@ -12,7 +12,7 @@ import sys
 
 for line in sys.stdin:
     
-    id, text = line.split('\t')
+    id, text = line.replace('\n',' ').split('\t')
     
     positive = set(["love", "good", "great", "happy", "cool", "best", "awesome", "nice"])
     negative = set(["hate", "bad", "stupid"])
