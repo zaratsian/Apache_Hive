@@ -2,11 +2,12 @@
 
 #######################################################################################################################
 #
-#   Download Movie Dataset from here: http://files.grouplens.org/datasets/movielens/ml-20m.zip
+#   Download Movie Dataset from here: https://grouplens.org/datasets/movielens/
+#   Here's the direct link: http://files.grouplens.org/datasets/movielens/ml-latest.zip
 #
 #   Additional info and background can be found here as well: https://www.kaggle.com/grouplens/movielens-20m-dataset
 #
-#   Contents:
+#   Contents (26 million reviews):
 #       1.)  movie.csv that contains movie information
 #       2.)  rating.csv that contains ratings of movies by users
 #       3.)  link.csv that contains identifiers that can be used to link to other sources
