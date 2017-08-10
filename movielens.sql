@@ -52,14 +52,20 @@ hadoop fs -put /tmp/ml-latest/links.csv /tmp/ml-latest/links/.
 hadoop fs -put /tmp/ml-latest/tags.csv /tmp/ml-latest/tags/.
 
 #######################################################################################################################
-Step 5: Using Hive, load the CSV tables as Hive tables:
+Step 5: Download Hive CSV Serde in order to correctly parse CSV data
 #######################################################################################################################
+
+wget https://github.com/downloads/IllyaYalovyy/csv-serde/csv-serde-0.9.1.jar -o /tmp/csv-serde-0.9.1.jar
+
+#######################################################################################################################
+Step 6: Using Hive, load the CSV tables as Hive tables:
+#######################################################################################################################
+
+ADD jar /tmp/csv-serde-0.9.1.jar;
 
 CREATE EXTERNAL TABLE IF NOT EXISTS temp_movies
     (movieId string, title string, genres string)
-    ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ","
-    LINES TERMINATED BY "\n"
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
     STORED AS TEXTFILE
     LOCATION "/tmp/ml-latest/movies"
     TBLPROPERTIES ("skip.header.line.count"="1");
@@ -76,16 +82,14 @@ INSERT OVERWRITE TABLE movies SELECT * FROM temp_movies;
 DROP TABLE temp_movies;
 
 CREATE EXTERNAL TABLE IF NOT EXISTS temp_ratings
-    (userId string, movieId string, rating float, timestamps int)
-    ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ","
-    LINES TERMINATED BY "\n"
+    (userId string, movieId string, rating float, rating_timestamp int)
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
     STORED AS TEXTFILE
     LOCATION "/tmp/ml-latest/ratings"
     TBLPROPERTIES ("skip.header.line.count"="1");
 
 CREATE TABLE IF NOT EXISTS ratings
-    (userId string, movieId string, rating float, timestamps int)
+    (userId string, movieId string, rating float, rating_timestamp int)
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY ","
     LINES TERMINATED BY "\n"
@@ -97,9 +101,7 @@ DROP TABLE temp_ratings;
 
 CREATE EXTERNAL TABLE IF NOT EXISTS temp_links
     (movieId string, imdbId string, tmdbId string)
-    ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ","
-    LINES TERMINATED BY "\n"
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
     STORED AS TEXTFILE
     LOCATION "/tmp/ml-latest/links"
     TBLPROPERTIES ("skip.header.line.count"="1");
@@ -116,16 +118,14 @@ INSERT OVERWRITE TABLE links SELECT * FROM temp_links;
 DROP TABLE temp_links;
 
 CREATE EXTERNAL TABLE IF NOT EXISTS temp_tags
-    (userId string, movieId string, tag string, timestamps int)
-    ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ","
-    LINES TERMINATED BY "\n"
+    (userId string, movieId string, tag string, tag_timestamp int)
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
     STORED AS TEXTFILE
     LOCATION "/tmp/ml-latest/tags"
     TBLPROPERTIES ("skip.header.line.count"="1");
 
 CREATE TABLE IF NOT EXISTS tags
-    (userId string, movieId string, tag string, timestamps int)
+    (userId string, movieId string, tag string, tag_timestamp int)
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY ","
     LINES TERMINATED BY "\n"
