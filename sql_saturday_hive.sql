@@ -1,3 +1,21 @@
+--###############################################################################################################
+--#
+--#   Create HDFS Directory Structure and Load Data
+--#   Data is from Kaggle: https://www.kaggle.com/c/march-machine-learning-mania-2016/data
+--#
+--###############################################################################################################
+
+scp -i ~/.ssh/field.pem ncaa/SeasonResults.csv centos@dzaratsian6.field.hortonworks.com:/tmp/.
+scp -i ~/.ssh/field.pem ncaa/Teams.csv centos@dzaratsian6.field.hortonworks.com:/tmp/.
+
+hadoop fs -mkdir /demo
+hadoop fs -mkdir /demo/ncaa
+hadoop fs -mkdir /demo/ncaa/SeasonResults
+hadoop fs -mkdir /demo/ncaa/Teams
+hadoop fs -put /tmp/SeasonResults.csv /demo/ncaa/SeasonResults/.
+hadoop fs -put /tmp/Teams.csv /demo/ncaa/Teams/.
+
+
 
 SHOW TABLES;
 
