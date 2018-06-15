@@ -19,5 +19,8 @@
 <br><a href="https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients">HiveServer2 Clients - Beeline</a>
 <br>
 <br>
+<br><a href="Spark Hive Read & Writes.json">Create Hive Table and Insert Records</a>
+<br>
+<br>
 <br><b>References:</b>
 <br><a href="http://hortonworks.com/wp-content/uploads/2016/05/Hortonworks.CheatSheet.SQLtoHive.pdf">Hortonworks hive Cheatsheet</a>
