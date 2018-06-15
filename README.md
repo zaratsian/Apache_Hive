@@ -19,7 +19,7 @@
 <br><a href="https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients">HiveServer2 Clients - Beeline</a>
 <br>
 <br>
-<br><a href="Spark Hive Read & Writes.json">Create Hive Table and Insert Records</a>
+<br><a href="create_hive_table.sql">Create Hive Table and Insert Records</a>
 <br>
 <br>
 <br><b>References:</b>
